@@ -48,6 +48,7 @@
   _tableView.delegate = self;
   _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
   _tableView.frame = self.bounds;
+  _tableView.transform = CGAffineTransformMakeScale(1, -1);
   [self addSubview:_tableView];
 }
 
@@ -73,6 +74,7 @@
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   [cell.textLabel sizeToFit];
   cell.textLabel.numberOfLines = 0;
+  cell.contentView.transform = CGAffineTransformMakeScale(1, -1);
   return cell;
 }
 
@@ -93,13 +95,13 @@
 
 #pragma ScrollAble Protocol
 - (void)scrollToEnd {
-  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:([_datasource count] - 1) inSection:0];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
   [_tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (void)appendMessage:(NSString *)message senderName:(NSString *)senderName {
   ChatData *chatData = [[ChatData alloc] initWithMessage:message senderName:senderName];
-  [_datasource addObject:chatData];
+  [_datasource insertObject:chatData atIndex:0];
   [_tableView reloadData];
 }
 
