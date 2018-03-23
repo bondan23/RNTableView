@@ -37,6 +37,9 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		E51B2A9E2064F006005FF5E9 /* GroupChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B2A9B2064F005005FF5E9 /* GroupChatTableView.swift */; };
+		E51B2A9F2064F006005FF5E9 /* GroupChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51B2A9C2064F005005FF5E9 /* GroupChatTableView.m */; };
+		E51B2AA02064F006005FF5E9 /* GroupChatTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B2A9D2064F006005FF5E9 /* GroupChatTableViewManager.swift */; };
 		E533D5B62063C484009F9016 /* ReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = E533D5B52063C484009F9016 /* ReactView.m */; };
 		E533D5BC2063C647009F9016 /* ReactViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E533D5BB2063C647009F9016 /* ReactViewManager.m */; };
 		E533D5D22063DE1D009F9016 /* RNTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E533D5CF2063DE1D009F9016 /* RNTableViewManager.m */; };
@@ -347,6 +350,9 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		E51B2A9B2064F005005FF5E9 /* GroupChatTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatTableView.swift; sourceTree = "<group>"; };
+		E51B2A9C2064F005005FF5E9 /* GroupChatTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupChatTableView.m; sourceTree = "<group>"; };
+		E51B2A9D2064F006005FF5E9 /* GroupChatTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatTableViewManager.swift; sourceTree = "<group>"; };
 		E533D5B42063C484009F9016 /* ReactView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactView.h; sourceTree = "<group>"; };
 		E533D5B52063C484009F9016 /* ReactView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactView.m; sourceTree = "<group>"; };
 		E533D5BA2063C647009F9016 /* ReactViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactViewManager.h; sourceTree = "<group>"; };
@@ -497,6 +503,9 @@
 		13B07FAE1A68108700A75B9A /* TableViewBridging */ = {
 			isa = PBXGroup;
 			children = (
+				E51B2A9C2064F005005FF5E9 /* GroupChatTableView.m */,
+				E51B2A9D2064F006005FF5E9 /* GroupChatTableViewManager.swift */,
+				E51B2A9B2064F005005FF5E9 /* GroupChatTableView.swift */,
 				E533D5D82063FD8A009F9016 /* RNTableView */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -1154,7 +1163,10 @@
 			files = (
 				E533D5B62063C484009F9016 /* ReactView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				E51B2A9E2064F006005FF5E9 /* GroupChatTableView.swift in Sources */,
+				E51B2AA02064F006005FF5E9 /* GroupChatTableViewManager.swift in Sources */,
 				E533D5BC2063C647009F9016 /* ReactViewManager.m in Sources */,
+				E51B2A9F2064F006005FF5E9 /* GroupChatTableView.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				E533D5D22063DE1D009F9016 /* RNTableViewManager.m in Sources */,
 				E533D5D62063EB53009F9016 /* ChatData.m in Sources */,
@@ -1210,6 +1222,7 @@
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1230,6 +1243,7 @@
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TableViewBridgingTests/Info.plist;

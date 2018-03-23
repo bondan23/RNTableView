@@ -17,6 +17,7 @@ import {
 } from "react-native";
 import ReactNativeComp from "./ReactNativeComp";
 import RNTableViewNative from "./RNTableViewNativeView";
+import GroupChatTableViewView from "./GroupChatTableViewNativeView";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -67,7 +68,8 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={{ flex: 1, marginTop: 20 }}>
-        <RNTableViewNative
+        <GroupChatTableViewView style={{ flex: 1 }} />
+        {/* <RNTableViewNative
           ref={"tableView"}
           style={{ flex: 1 }}
           onScroll={this.handleScroll}
@@ -98,7 +100,7 @@ export default class App extends Component<Props> {
           >
             <Text style={{ color: "white" }}>Append Data</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     );
   }
